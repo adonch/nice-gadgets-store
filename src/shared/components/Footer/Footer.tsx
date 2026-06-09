@@ -42,6 +42,7 @@ export const Footer: React.FC = () => {
     if (isModalOpen) {
       document.body.style.overflow = 'hidden';
     }
+
     return () => {
       document.body.style.overflow = '';
     };

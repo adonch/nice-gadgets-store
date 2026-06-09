@@ -4,6 +4,7 @@ import { getSuggestedProducts } from '@/shared/api/api';
 
 export const useSuggestedProducts = () => {
   const [suggestedProducts, setSuggestedProducts] = useState<Product[]>([]);
+
   useEffect(() => {
     getSuggestedProducts()
       .then(setSuggestedProducts)
@@ -11,5 +12,6 @@ export const useSuggestedProducts = () => {
         console.error('Error fetching suggested products:', error),
       );
   }, []);
+
   return suggestedProducts;
 };

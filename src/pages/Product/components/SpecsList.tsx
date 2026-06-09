@@ -11,7 +11,11 @@ export const SpecsList: React.FC<{ product: ProductDetails }> = ({
     <ul className={styles['product-page__specs-list']}>
       {specsConfig.map(({ label, key, optional }) => {
         const value = product[key as keyof ProductDetails];
-        if (optional && !value) return null;
+
+        if (optional && !value) {
+          return null;
+        }
+
         return (
           <li key={key} className={styles['product-page__specs-item']}>
             <span className={styles['product-page__specs-item-label']}>

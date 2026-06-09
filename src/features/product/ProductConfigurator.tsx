@@ -27,9 +27,8 @@ export const ProductConfigurator: React.FC<ProductConfiguratorProps> = ({
 }) => {
   const navigate = useNavigate();
   const { category, productSlug } = useParams();
-  const { inFav, inCart, handleCartClick, handleFav, buttonText } = useProductActions(
-    foundProductFromProducts?.itemId,
-  );
+  const { inFav, inCart, handleCartClick, handleFav, buttonText } =
+    useProductActions(foundProductFromProducts?.itemId);
 
   if (!product) {
     return null;

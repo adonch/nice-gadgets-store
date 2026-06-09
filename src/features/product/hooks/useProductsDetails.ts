@@ -21,14 +21,20 @@ export const useProductDetails = (category?: string, productSlug?: string) => {
 
     getProductDetails(category)
       .then(products => {
-        if (ignore) return;
+        if (ignore) {
+          return;
+        }
+
         const foundProduct = products.find(p => p.id === productSlug);
+
         setProduct(foundProduct || null);
         setSelectedColor(foundProduct?.color || '');
         setSelectedCapacity(foundProduct?.capacity || '');
       })
       .finally(() => {
-        if (!ignore) setLoading(false);
+        if (!ignore) {
+          setLoading(false);
+        }
       });
 
     return () => {

@@ -16,6 +16,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   const { inCart, inFav, handleCartClick, handleFav, buttonText } =
     useProductActions(item.itemId);
+
   if (!item) {
     return null;
   }
